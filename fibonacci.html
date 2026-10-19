@@ -1,0 +1,29 @@
+<html>
+<body>
+
+<h2>fibonacci Number</h2>
+
+<input type="number" id="num">
+<button onclick="show()">show</button>
+
+<p id="result"></p>
+
+<script>
+    function show(){
+        let n = Number(document.getElementById("num").value);
+        let a=0, b=1, series="";
+        for(let i=1;i<=n;i++){
+            series += a + " ";
+            let c=a+b;
+            a=b;
+            b=c;
+        }
+
+        document.getElementById("result").innerHTML=series;
+        
+    }
+
+</script>
+</body>
+</html>
+

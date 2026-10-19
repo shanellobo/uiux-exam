@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="onclickstyle.css">
+    <script>
+        function submitinfo() {
+            if (qz.log.value == "") {
+                alert("Enter login name");
+            } else if (qz.pas.value == "") {
+                alert("Enter password");
+            } else {
+                alert("Form submitted successfully");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="qz">
+        <h1>Welcome to Nisiki Technologies (P). Ltd</h1>
+        <br>
+
+        Login name:
+        <input type="text" name="log">
+
+        <br><br>
+
+        Password:
+        <input type="password" name="pas">
+
+        <br><br>
+
+        <input type="button" value="Submit" onclick="submitinfo()">
+        <input type="reset" name="reset" value="Reset">
+    </form>
+</body>
+</html>

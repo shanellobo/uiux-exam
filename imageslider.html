@@ -1,0 +1,42 @@
+<html>
+<head>
+</head>
+
+<body>
+
+<h2>Image Slider</h2>
+
+<img id="image" src="aurora.jpg">
+
+<br><br>
+
+<button onclick="previous()">Previous</button>
+<button onclick="next()">Next</button>
+
+<script>
+    let images = ["aurora.jpg", "nebula.jpg", "sky.jpg"];
+    let i = 0;
+
+    function next() {
+        i++;
+
+        if (i == images.length) {
+            i = 0;
+        }
+
+        document.getElementById("image").src = images[i];
+    }setInterval(next,3000)
+
+    function previous() {
+        i--;
+
+        if (i < 0) {
+            i = images.length - 1;
+        }
+
+        document.getElementById("image").src = images[i];
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    background-color: rgb(149, 202, 233);
+}
+
+form {
+    background-color: white;
+    width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+}
+    </style>
+</head>
+<body>
+    <center>
+    <h1><b>My Feedback Form</b></h1>
+    </center>
+    <form onsubmit="submitForm()">
+    <label>First name:</label>
+    <input type="text" name="name"><br>
+    <label>Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <label>Password:</label>
+    <input type="password"required><br>
+
+    <b>Please check all the emotions that apply to you: </b><br>
+    <input type="checkbox" name="Angry" value="Angry"> Angry<br>
+    <input type="checkbox"> Sad<br>
+    <input type="checkbox"> Happy<br>
+    <input type="checkbox"> Ambivalent<br>
+
+    <b>How satisfied are you with our services: </b><br>
+    <input type="radio" name="satisfaction"> Very satisfied<br>
+    <input type="radio" name="satisfaction"> satisfied <br>
+    <input type="radio" name="satisfaction"> Didn't care<br>
+    <input type="radio" name="satisfaction">Dissatisfied<br>
+    <input type="radio" name="satisfaction">Very Dissatisfied<br>
+
+    <b>Further Comments: </b>
+    <textarea name="comments" rows="3" cols="40" wrap></textarea><br>
+
+    <label>Bio Photo:</label>
+    <input type="file" accept=".pdf, .jpg"><br>
+
+    <label>Location Visited:</label>
+    <select>
+        <option>Select Location</option>
+        <option value="mangalore">Mangalore</option>
+        <option value="Abu Dhabi">Abu Dhabi</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Bangalore">Bangalore</option>
+    </select><br><br>
+
+    <input type="reset">
+    <input type="submit">
+    <script>
+    function submitForm() {
+        alert("Form submitted successfully!");
+        return false;
+    }
+    </script>
+
+
+</body>
+</html>
