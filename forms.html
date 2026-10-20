@@ -21,19 +21,19 @@ form {
     <center>
     <h1><b>My Feedback Form</b></h1>
     </center>
-    <form onsubmit="submitForm()">
+    <form onsubmit="return submitForm()">
     <label>First name:</label>
     <input type="text" name="name"><br>
     <label>Email:</label>
     <input type="email" id="email" name="email"><br>
     <label>Password:</label>
-    <input type="password"required><br>
+    <input type="password" minlength="8" required><br>
 
     <b>Please check all the emotions that apply to you: </b><br>
-    <input type="checkbox" name="Angry" value="Angry"> Angry<br>
-    <input type="checkbox"> Sad<br>
-    <input type="checkbox"> Happy<br>
-    <input type="checkbox"> Ambivalent<br>
+    <input type="checkbox" class="emotion" value="Angry"> Angry<br>
+    <input type="checkbox" class="emotion" value="Sad"> Sad<br>
+    <input type="checkbox" class="emotion" value="Happy"> Happy<br>
+    <input type="checkbox" class="emotion" value="Ambivalent"> Ambivalent<br>
 
     <b>How satisfied are you with our services: </b><br>
     <input type="radio" name="satisfaction"> Very satisfied<br>
@@ -49,8 +49,8 @@ form {
     <input type="file" accept=".pdf, .jpg"><br>
 
     <label>Location Visited:</label>
-    <select>
-        <option>Select Location</option>
+    <select required>
+        <option value="">Select Location</option>
         <option value="mangalore">Mangalore</option>
         <option value="Abu Dhabi">Abu Dhabi</option>
         <option value="Kerala">Kerala</option>
@@ -61,10 +61,17 @@ form {
     <input type="submit">
     <script>
     function submitForm() {
-        alert("Form submitted successfully!");
+    let emotions = document.querySelectorAll(".emotion:checked");
+
+    if (emotions.length < 1) {
+        alert("Please select at least one emotion!");
         return false;
     }
-    </script>
+
+    alert("Form submitted successfully!");
+    return false;
+}
+</script>
 
 
 </body>
